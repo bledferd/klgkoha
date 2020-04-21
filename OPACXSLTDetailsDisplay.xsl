@@ -496,20 +496,6 @@
        </xsl:if>
 
 
-            <!-- Content Type -->
-            <xsl:if test="marc:datafield[@tag=336] or marc:datafield[@tag=337] or marc:datafield[@tag=338]">
-                <span class="results_summary" id="content_type">
-                    <xsl:if test="marc:datafield[@tag=336]">
-                        <span class="label">Content type: </span>
-                        <xsl:for-each select="marc:datafield[@tag=336]">
-                            <xsl:call-template name="subfieldSelect">
-                                <xsl:with-param name="codes">a</xsl:with-param>
-                                <xsl:with-param name="delimeter">, </xsl:with-param>
-                            </xsl:call-template>
-                            <xsl:if test="position() != last()"><span class="separator"><xsl:text> | </xsl:text></span></xsl:if>
-                        </xsl:for-each>
-                    </xsl:if>
-                    <xsl:text> </xsl:text>
                     <!-- Media Type -->
                     <xsl:if test="marc:datafield[@tag=337]">
                         <span class="label">Media type: </span>
